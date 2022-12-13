@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     image: "node:10"
+    container_name: node_container
     entrypoint:
       - "sh"
       - "-c"
@@ -18,7 +19,7 @@ services:
       - "/usr/src/app/node_modules"
   mongo:
     image: "mongo"
-    container_name: mongodb
+    container_name: mongo_container
     # restart: always
     # environment:
     #   MONGO_INITDB_ROOT_USERNAME: dev

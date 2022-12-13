@@ -77,3 +77,17 @@ app.post('/create-data', function (req, res) {
   });
 });
 ```
+
+## CORS
+- Enable CORS for a single endpoint:
+```js 
+app.get('/', cors(), (req, res) => {     
+res.json({         
+message: 'Happy Coding'    
+ }); 
+});
+```
+- Enable CORS for all endpoints (use as middleware)):
+```js
+app.use(cors());
+```
