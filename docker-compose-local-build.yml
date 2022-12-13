@@ -3,7 +3,7 @@
 #   web:
 #     # Rather than running `npm install` in the container after booting, we
 #     # run `npm install` in the Docker image build process.
-#     build: .
+#     build: ./nodeserver
 #     entrypoint:
 #       - "/usr/src/app/node_modules/.bin/nodemon"
 #       - "/usr/src/app/server.js"

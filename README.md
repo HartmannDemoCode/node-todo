@@ -77,5 +77,3 @@ app.post('/create-data', function (req, res) {
   });
 });
 ```
-
-# repo auto created

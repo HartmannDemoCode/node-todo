@@ -1,9 +1,9 @@
 {
   "name": "node-todo",
   "version": "0.0.1",
-  "description": "Simple todo application.",
+  "description": "Start code for node-mongo-express app for use on Sem 4: Fullstack Typescript",
   "main": "server.js",
-  "author": "Scotch",
+  "author": "Sem4_Fullstack_Typescript",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.10.8",
