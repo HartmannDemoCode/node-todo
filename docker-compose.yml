@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    image: "node:10"
+    entrypoint:
+      - "sh"
+      - "-c"
+      - "npm install && ./node_modules/.bin/nodemon server.js"
+    working_dir: "/usr/src/app"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    volumes:
+      - ".:/usr/src/app"
+      # Don't sync the node_modules directory back to the client.
+      - "/usr/src/app/node_modules"
+  mongo:
+    image: "mongo"
+    container_name: mongodb
+    # restart: always
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: dev
+    #   MONGO_INITDB_ROOT_PASSWORD: ax2
+    #   MONGO_INITDB_DATABASE: mymongodb
+    # volumes:
+    #   - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro # this will run the script (on the first run only).
+    ports:
+      - "27017:27017"
