@@ -14,6 +14,30 @@
 - Drop database: `db.dropDatabase()`
 - Drop collection: `db.<collection name>.drop()`
 
+## Middleware in Express
+- Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+
+Middleware functions can perform the following tasks:
+
+- Execute any code.
+- Make changes to the request and the response objects.
+- End the request-response cycle.
+- Call the next middleware in the stack.
+- Middleware can be used to:
+  - Authenticate a user
+  - Log the request
+  - Parse the request body
+  - Send a response and much more
+- Middleware runs after receiving a request and before hitting the route handler.
+- syntax: `app.use(middleware)`
+- Example:
+```js
+const myLogger = function (req, res, next) {
+  console.log('LOGGED')
+  next()
+}
+```
+
 ## Mongo without Mongoose
 - If we want to keep it light and breezy, we can use the native mongo driver.
 - We can use the mongo driver to connect to the database and perform CRUD operations.
@@ -91,3 +115,6 @@ message: 'Happy Coding'
 ```js
 app.use(cors());
 ```
+
+### Dotenv
+[Dotenv](https://www.npmjs.com/package/dotenv) is a zero-dependency module that loads environment variables from a .env file into process.env.

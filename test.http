@@ -1,0 +1,30 @@
+GET http://localhost:8080/user/
+
+### 
+GET http://localhost:8080/user/639a33278b34b607bf3bbbf4
+
+###
+GET http://localhost:8080/api/hoho
+
+###
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+    "name": "Paula",
+    "email": "paula@example.com",
+    "password": "PP1234"
+}
+
+###
+DELETE http://localhost:8080/user/639b889bb53a220b20e44452
+
+###
+PATCH http://localhost:8080/user/639a33278b34b607bf3bbbf4
+Content-Type: application/json
+
+{
+    "name": "Paulina",
+    "email": "Palle@example.com"
+}
+
